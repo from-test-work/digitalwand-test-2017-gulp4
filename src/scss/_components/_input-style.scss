@@ -1,0 +1,163 @@
+// Transition
+@mixin transition($trsn) {
+  -moz-transition: $trsn;
+  -o-transition: $trsn;
+  -webkit-transition: $trsn;
+  transition: $trsn;
+}
+
+// Transform
+@mixin transform($trfm) {
+  -moz-transform: $trfm;
+  -ms-transform: $trfm;
+  -o-transform: $trfm;
+  -webkit-transform: $trfm;
+  transform: $trfm;
+}
+
+// Border Radius
+@mixin border-radius($border-radius) {
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+
+@mixin border-top-radius($btlr) {
+  -webkit-border-top-left-radius: $btlr;
+  -webkit-border-top-right-radius: $btlr;
+  -moz-border-radius-topleft: $btlr;
+  -moz-border-radius-topright: $btlr;
+  border-top-left-radius: $btlr;
+  border-top-right-radius: $btlr;
+}
+
+@mixin border-bottom-radius($btlr) {
+  -webkit-border-bottom-right-radius: $btlr;
+  -webkit-border-bottom-left-radius: $btlr;
+  -moz-border-radius-bottomright: $btlr;
+  -moz-border-radius-bottomleft: $btlr;
+  border-bottom-right-radius: $btlr;
+  border-bottom-left-radius: $btlr;
+}
+
+@mixin border-left-radius($btlr) {
+  -webkit-border-top-left-radius: $btlr;
+  -webkit-border-bottom-left-radius: $btlr;
+  -moz-border-radius-topleft: $btlr;
+  -moz-border-radius-bottomleft: $btlr;
+  border-top-left-radius: $btlr;
+  border-bottom-left-radius: $btlr;
+}
+
+@mixin border-right-radius($btlr) {
+  -webkit-border-top-right-radius: $btlr;
+  -webkit-border-bottom-right-radius: $btlr;
+  -moz-border-radius-topright: $btlr;
+  -moz-border-radius-bottomright: $btlr;
+  border-top-right-radius: $btlr;
+  border-bottom-right-radius: $btlr;
+}
+
+
+/*
+* @section      Components
+* @Components	Input Style
+*/
+
+$form--fsz: inherit !default;
+$form--lh: 1.2;
+$form--fw: inherit !default;
+$form--color: lighten($grey, 8.63) !default;
+$form--border-sise: 1px !default;
+$form--border: $form--border-sise solid $form--color !default;
+$form--border-radius: 0+'px';
+// input style
+$form-input--height: 32px !default;
+$form-input--line-height: 32px !default;
+$form-input--padding-left: 10px !default;
+$form-input--padding-right: 10px !default;
+// textarea style
+$form-textarea--height: 100px !default;
+// color validate
+$form-control--danger-color: red;
+$form-control--warning-color: orange;
+$form-control--valid-color: green;
+// icon validate style
+$form-validationIcon--width: 14px;
+$form-validationIcon--height: 14px;
+$form-validationIcon--pull-right: 5px;
+$form-validationIcon--pull-left: 5px;
+
+$background: $white;
+
+.form-group {
+  position: relative;
+
+  label {
+    display: block;
+    position: relative;
+  }
+
+  //input styles
+  .form-input {
+    display: block;
+    text-align: left;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 250px;
+    background: $background;
+    border: $form--border;
+    height: $form-input--height;
+    padding-left: $form-input--padding-left;
+    padding-right: $form-input--padding-right;
+    -webkit-appearance: none;
+    border-radius: $form--border-radius;
+  }
+
+  .search-submit {
+    &__right {
+      input[type="submit"] {
+        right: $form--border-sise;
+      }
+      .form-input {
+        padding-right: calc(#{$form-input--height} + 5px);
+      }
+    }
+    input[type="submit"] {
+      position: absolute;
+      width: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+      height: calc(#{$form-input--height} - (#{$form--border-sise} * 2));
+      top: $form--border-sise;
+      border: none;
+      background: url("../images/content/search.png") no-repeat center center;
+    }
+  }
+}
+
+//placeholder-overflow
+.placeholder-overflow{
+  input[placeholder]          {text-overflow:ellipsis;}
+  input::-moz-placeholder     {text-overflow:ellipsis;}
+  input:-moz-placeholder      {text-overflow:ellipsis;}
+  input:-ms-input-placeholder {text-overflow:ellipsis;}
+}
+
+//placeholder-color
+.placeholder-color{
+  ::-webkit-input-placeholder {color:lighten($grey, 8.63);}
+  ::-moz-placeholder          {color:lighten($grey, 8.63);}
+  :-moz-placeholder           {color:lighten($grey, 8.63);}
+  :-ms-input-placeholder      {color:lighten($grey, 8.63);}
+}
+
+.placeholder-effect2{
+  ::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  ::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  :-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  :-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  :focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  :focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  :focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  :focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+}

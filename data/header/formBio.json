@@ -1,0 +1,25 @@
+{
+    "formBio": [
+        {
+            "type": "text",
+            "placeholder": "Имя"
+        },
+        {
+            "type": "text",
+            "placeholder": "Дата рождения",
+            "id": "datepicker"
+        },
+        {
+            "type": "text",
+            "placeholder": "Город"
+        },
+        {
+            "type": "text",
+            "placeholder": "ловаыораоы"
+        },
+        {
+            "type": "tel",
+            "placeholder": "Контактные данные"
+        }
+    ]
+}

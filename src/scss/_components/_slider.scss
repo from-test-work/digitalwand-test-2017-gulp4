@@ -1,0 +1,146 @@
+.swiper-container {
+  width: 100%;
+}
+
+.swiper3d{
+  margin: 10px auto 0;
+
+  &__item{
+    height: 434px;
+  }
+  &__bg1{
+    position: relative;
+    background: url("../../images/content/baner-01.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto 5px;
+    &:before{
+      position: absolute;
+      content: '';
+      height: 5px;
+      background: #757575;
+      bottom: -5px;
+      left: 17px;
+      right: 17px;
+
+    }
+  }
+  &__cnt{
+    padding: 190px 80px 0;
+  }
+  &__title{
+    color: $white;
+    font-family: $default-font-family;
+    font-size: 48px;
+    font-weight: 100;
+    line-height: 1;
+    span{
+      font-size: 76px;
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+  &__text{
+    color: $white;
+    font-size: 14px;
+  }
+  .icon {
+    position: relative;
+    top: -40px;
+    right: 20px;
+    &-planer {
+      fill: $white;
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.swiper3d{
+  * + &__text{
+    margin-top: 8px;
+  }
+}
+
+.swiper3d .swiper-button-next{
+  z-index: 999;
+  background-image: url(../../images/content/shevron-next.png);
+}
+.swiper3d .swiper-button-prev{
+  z-index: 999;
+  background-image: url(../../images/content/shevron-prev.png);
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .swiper3d{
+    &__cnt{
+      padding: 190px 50px 0;
+    }
+    &__title{
+      font-size: 30px;
+      span{
+        font-size: 50px;
+      }
+    }
+    &__text{}
+
+    .icon{
+      top: -20px;
+      right: 10px;
+    }
+  }
+}
+
+@media (min-width: 479px) and (max-width: 767px){
+  .swiper3d{
+    &__cnt{
+      padding: 80px 15px;
+    }
+    &__title{
+      font-size: 26px;
+      text-align: center;
+      span{
+        font-size: 1.5em;
+      }
+    }
+    &__text{
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .icon{
+      top: -20px;
+      right: 10px;
+    }
+  }
+
+
+}
+
+@media (max-width: 479px){
+  .swiper3d{
+    &__cnt{
+      padding: 50px 15px;
+    }
+    &__title{
+      font-size: 1.2em;
+      text-align: center;
+      span{
+        font-size: 1.5em;
+      }
+    }
+    &__text{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .icon{
+      display: none;
+    }
+  }
+
+  .swiper3d .swiper-button-next,
+  .swiper3d .swiper-button-prev{
+    display: none;
+  }
+}

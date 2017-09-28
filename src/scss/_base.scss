@@ -1,0 +1,331 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  // background: rgba($color-black, 0.2)
+}
+
+html {
+  box-sizing: border-box;
+}
+
+@media print, screen and (min-width: 40em) {
+  .grid-container {
+    padding-right: (.625rem * 2);
+    padding-left: (.625rem * 2);
+  }
+}
+
+h5 + * {
+  margin-top: 1rem;
+}
+
+.page {
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+.delimeter {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f0f0f0;
+  }
+}
+
+/*
+* @section      Components
+* @Components	well
+*/
+.well {
+  &--header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background: lighten($grey, 24.31);
+  }
+  &--section1 {
+    padding-top: 22px;
+    padding-bottom: 0;
+  }
+  &--section2 {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 1px solid #c9c9c9;
+  }
+}
+
+
+/*
+* @_components   Custom form Elements
+*/
+
+$custom-form-inputType: (
+        color: color,
+        date: date,
+        datetime-local: datetime-local,
+        datetime: datetime,
+        email: email,
+        month: month,
+        number: number,
+        password: password,
+        search: search,
+        tel: tel,
+        text: text,
+        time: time,
+        url: url,
+        week: week,
+);
+.custom-form-style {
+  position: relative;
+
+  $form-inputType: color date facebook datetime-local datetime email month number password search tel text time url week;
+  @each $attr in $form-inputType {
+    [type="#{$attr}"] {
+      padding: 4px 10px 0 2px;
+      margin: 0;
+      border: 0;
+      border-bottom: 2px solid #333;
+      box-shadow: none;
+      height: 34px;
+      letter-spacing: 1.4px;
+      color: #666666;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 22px;
+      text-transform: uppercase;
+      background: transparent;
+      transition: border-color 0.3s;
+      &::placeholder {
+        color: #666666;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+  }
+  label + label {
+    margin-top: 22px;
+  }
+
+  //@_components   Custom Checkbox
+  [type="checkbox"] {
+    display: none;
+  }
+  [type="checkbox"] + label {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 calc(18px + 8px);
+    color: #666666;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: 0.3s ease all;
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      background-color: #eeeeee;
+      border-radius: 5px;
+      transform: translateY(-50%);
+    }
+  }
+  [type="checkbox"]:checked + label {
+    &:before {
+      background-image: url('../images/check.svg');
+      background-color: #0093d7;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.custom-form-style {
+  &.is-approved {
+    svg {
+      display: block;
+    }
+  }
+}
+
+.checkbox {
+  &__item {
+    margin-bottom: 36px;
+  }
+}
+
+
+.mobeli-memu{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 70px 20px 0;
+  height: 100vh;
+  background: $white;
+  list-style-type: none;
+  position: fixed;
+  left: -9999px;
+  transition: 0.3s all ease;
+  z-index: 2;
+  .nav-list__link,
+  .nav-list__text,
+  .nav-list__separator,
+  .singin,
+  .online-tablo__text{
+    font-size: 16px;
+  }
+
+  &__item + *{
+    margin-top: 20px;
+  }
+}
+
+.menu-active{
+  .mobeli-memu{
+    left: 0;
+    width: 280px;
+    transition: 0.3s all ease;
+  }
+}
+
+.menu-trigger {
+  position: fixed;
+  top: 30px;
+  left: 15px;
+  padding: 5px;
+  transition: all 300ms;
+  background: $white;
+  z-index: 99999;
+}
+
+
+/*
+* @section      Components
+* @Components	Mobile toogler
+*/
+
+.m-toggler {
+  cursor: pointer;
+
+  &-bars {
+    display: none;
+    flex-direction: column;
+  }
+  &__bar {
+    width: 30px;
+    height: 4px;
+    background: red;
+    transition: 0.3s ease all;
+  }
+  &__bar+* {
+    margin-top: 4px;
+  }
+  &--opened {
+    background: transparent;
+    z-index: 999;
+    .m-toggler__bar {
+      background: transparent;
+      &:first-child {
+        width: 30px;
+        background: red;
+        transform: rotate(45deg) translate(8px, 5.5px)
+      }
+      &:last-child {
+        width: 30px;
+        background: red;
+        transform: rotate(-45deg) translate(5px, -3.5px)
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 991px) {
+  .nav-panel{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .brand{
+      order: 1;
+    }
+
+    .form-group{
+      order: 2;
+    }
+
+    .tabs{
+      order: 3;
+      width: 100%;
+      margin-top: 20px;
+      &__nav-link{
+        padding: 15px 8px 15px;
+        border-bottom: 1px solid transparent;
+      }
+      &__nav-link:focus,
+      &__nav-link--active{
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .nav-panel{
+    .brand{
+      width: 100%;
+      justify-content: center;
+      display: flex;
+    }
+    .form-group{
+      margin: 0 auto;
+      .search {
+        margin: 20px 0 10px;
+      }
+    }
+  }
+
+  [data-view="desktop"]{
+    display: none;
+  }
+
+  .mobeli-memu{
+    display: flex;
+  }
+
+  .brand{
+    &__logo{
+      width: 190px;
+    }
+  }
+
+  .m-toggler-bars {
+    display: block;
+  }
+
+
+
+}
+
+

@@ -1,0 +1,93 @@
+
+#hidden-content-b {
+  /* Custom styling */
+  width: 95%;
+  max-width: 550px;
+  border-radius: 4px;
+  display: none;
+  /* Custom transition - slide from top*/
+  transform: translateY(-50px);
+  transition: all .33s;
+}
+
+.fancybox-slide--current #hidden-content-b {
+  transform: translateY(0);
+}
+
+.fancybox-slide > div {
+  padding: 0;
+  margin: 0;
+}
+
+.cmxform{
+  padding: 20px 40px;
+  fieldset{
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  legend{}
+  &__item{}
+
+  &__reqOpt {
+    color: #aaa;
+    font-size: 14px;
+  }
+  &__submit {
+    background-color: $primary;
+    color: $white;
+    border: none;
+    outline: 0;
+    padding: 5px;
+    display: block;
+    border-radius: 6px;
+  }
+  input, textarea {
+    display: block;
+    width: 100%;
+    line-height: 32px;
+    font-size: 24px;
+    box-sizing: border-box;
+  }
+
+  textarea{
+    resize: none;
+  }
+  label {
+    margin-top: 20px;
+    display: block;
+  }
+  label.error {
+    position: relative;
+    background: $secondary;
+    border: 1px solid $secondary;
+    color: $white;
+    top: -10px;
+    width: 170px;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 10px;
+  }
+  label.error:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  label.error:before {
+    border-color: rgba(228, 38, 68, 0);
+    border-bottom-color: $secondary;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+}
+
+
+
+
+

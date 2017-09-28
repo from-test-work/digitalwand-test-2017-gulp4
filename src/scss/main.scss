@@ -1,0 +1,46 @@
+@import "variables";
+// @import "functions";
+// @import "mixins";
+// @import "sprites";
+@import "fonts";
+@import "vendor";
+@import "container";
+
+@import "base";
+
+body {
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+  color: $black;
+}
+
+/*
+* @subsection   Imports
+*/
+@import "_components/menu-button";
+
+@import "_components/nav-bar";
+@import "_components/nav-panel";
+@import "_components/header-asside";
+
+@import "_components/nav-list";
+@import "_components/online-tablo";
+@import "_components/singin";
+
+@import "_components/brand";
+@import "_components/tabs";
+@import "_components/input-style";
+@import "_components/search";
+
+@import "_components/menu";
+@import "_components/slider";
+@import "_components/fansybox-style";
+
+
+*{
+   //background: rgba($black, 0.04);
+}
+
+

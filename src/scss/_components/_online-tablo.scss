@@ -1,0 +1,32 @@
+/*
+* @section      Components
+* @Components	Online Tablo
+*/
+
+.online-tablo {
+  text-decoration: none;
+  display: inline-flex;
+  .icon {
+    &-clock {
+      fill: $secondary;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: $primary;
+    display: inline-flex;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.online-tablo {
+  .icon + &__text{
+    margin-left: 9px;
+  }
+}

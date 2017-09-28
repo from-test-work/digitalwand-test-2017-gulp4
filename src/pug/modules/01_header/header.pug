@@ -1,0 +1,112 @@
+//- HEADER
+header.page-header
+    section.well.well--header(data-view="desktop")
+        .container
+            .nav-bar
+                nav.nav
+                    ul.nav-list
+                        li.nav-list__item
+                            a.nav-list__link(href='#usasite') USA site
+                        li.nav-list__item
+                            a.nav-list__link(href='#deutschsite') Deutsch site
+                        li.nav-list__item
+                            span.nav-list__text Россия
+                            span.nav-list__separator :
+                            a.nav-list__link(href='#switchto') Switch to english
+
+                .header-asside
+                    a.online-tablo(href="#onlinetablo")
+                        +icon("clock")
+                        .online-tablo__text Онлайн-табло
+
+
+                    a.singin(data-fancybox data-src="#hidden-content-b" href="javascript:;") Вход и регистрация
+
+
+        //ul.mobeli-memu
+        //    li.mobeli-memu__item
+
+    section
+        .menu-trigger.m-toggler(id="m-toggler" )
+            .m-toggler-bars
+                .m-toggler__bar
+                .m-toggler__bar
+                .m-toggler__bar
+
+        ul.mobeli-memu
+            li.mobeli-memu__item
+                a.nav-list__link(href='#usasite') USA site
+            li.mobeli-memu__item
+                a.nav-list__link(href='#deutschsite') Deutsch site
+            li.mobeli-memu__item
+                span.nav-list__text Россия
+                span.nav-list__separator :
+                a.nav-list__link(href='#switchto') Switch to english
+            li.mobeli-memu__item
+                a.online-tablo(href="#onlinetablo")
+                    span.online-tablo__text Онлайн-табло
+            li.mobeli-memu__item
+                a.singin(data-fancybox data-src="#hidden-content-b" href="javascript:;") Вход и регистрация
+
+    section.well.well--section1
+        .container
+            .nav-panel
+                .brand
+                    a.brand__link(href="/")
+                        img.brand__logo(src="images/content/brand-01.png")
+
+
+                //-----Tabs
+                -var tab = [{link: 'Возможности'}, {link: 'Информация'}, {link: 'Привилегии'}];
+                .tabs(id="tabs")
+                    //-----Tabs Nav
+                    .tabs__nav
+                        -for (var i = 0; i < tab.length; i++)
+                            if (i == 0)
+                                a.tabs__nav-link.tabs__nav-link--active(href="#") !{tab[i].link}
+                            else
+                                a.tabs__nav-link(href="#") !{tab[i].link}
+                    //-----Tabs Cnt
+
+                form.form-group(action="#")
+                    .search.placeholder-color.placeholder-effect2.placeholder-overflow
+                        label.search-submit.search-submit__right
+                            input.form-input(type='search', placeholder='search input')
+                            input(type='submit', value='')
+
+#hidden-content-b
+    form#commentForm.cmxform(method='get', action='')
+        fieldset
+            legend Заполните поля
+            //.cmxform__item
+            //    label(for='cname')
+            //        | Имя
+            //        span.cmxform__reqOpt  Минимум 2 символа
+            //    input#cname(name='name', minlength='2', type='text', required='')
+
+            .cmxform__item
+                label(for='cemail')
+                    | E-Mail
+                    span.cmxform__reqOpt *
+                input#cemail(type='email', name='email', required='')
+
+            .cmxform__item
+                label(for='cepassword')
+                    | Password
+                    span.cmxform__reqOpt *
+                input#cepassword(type='password', name='password', required='')
+
+            //.cmxform__item
+            //    label(for='curl')
+            //        | URL
+            //        span.cmxform__reqOpt Optional
+            //    input#curl(type='url', name='url')
+
+            //.cmxform__item
+            //    label(for='ccomment')
+            //        | Comment
+            //        span.cmxform__reqOpt Required
+            //    textarea#ccomment(name='comment', required='')
+            br
+            .cmxform__item
+                input.cmxform__submit(type='submit', value='SUBMIT')

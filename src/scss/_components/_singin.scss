@@ -1,0 +1,17 @@
+/*
+* @section      Components
+* @Components	Signin and Registration
+*/
+
+.singin{
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  display: inline-flex;
+  color: $primary;
+  margin-right: 17px;
+  &:hover{
+    text-decoration: underline;
+  }
+}

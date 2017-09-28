@@ -1,0 +1,31 @@
+include mixins/svg
+block vars
+    - var html = { attrs: {lang: 'ru'}, classList: []}
+    - var body = { attrs: {}, classList: []}
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+    //HEAD
+    head
+        //meta
+        include modules/00_meta/meta
+        //title
+        block title
+        //links
+        block links
+        link(rel="stylesheet" href="css/main.css?v=" + Date.now())
+        //scripts
+        block scripts
+        script(src="js/vendor.js?v=" + Date.now())
+        script(src="js/main.js?v=" + Date.now())
+    //BODY
+    body(class=body.classList)&attributes(body.attrs)
+        #page.page
+            block header
+                include modules/01_header/header
+
+            block main
+                include modules/02_main/index
+
+            block footer
+                include modules/03_footer/footer

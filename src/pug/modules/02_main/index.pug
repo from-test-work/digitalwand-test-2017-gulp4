@@ -1,0 +1,27 @@
+main
+    section.well.well--section2
+        .container
+            #tabs
+                -for (var i = 0; i < tab.length; i++)
+                    if (i == 0)
+                        .tabs__cnt.tabs__cnt--active
+                            // Swiper
+                            .swiper-container.swiper3d(id="swiper3d")
+                                    .swiper-wrapper
+                                        -for(var j = 0; j < 7; j++)
+                                        .swiper-slide.swiper3d__item.swiper3d__bg1
+                                            .swiper3d__cnt
+                                                .swiper3d__title
+                                                    | Открывайте мир
+                                                    br
+                                                    span вместе с Трансаэро
+                                                    +icon("planer")
+                                                .swiper3d__text Почувствуйте комфорт современного Boeing 747-300
+
+                                    // Add Navigation
+                                    .swiper-button-prev
+                                    .swiper-button-next
+
+                    else
+                        .tabs__cnt
+                            h4 it's tab !{[i + 1]}

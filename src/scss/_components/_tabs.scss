@@ -1,0 +1,73 @@
+/*
+* @section      Components
+* @Components	Tabs
+*/
+
+.tabs{
+  // Navigation
+  &__nav{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: -1px;
+  }
+  &__nav-link{
+    text-decoration: none;
+    text-align: center;
+    padding: 13px 10px 31px;
+    font-size: 15px;
+    line-height: 1;
+    color: $black;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 2px solid transparent;
+    //border-bottom: 1px solid #c9c9c9;
+    transition: 0.3s ease all;
+    position: relative;
+
+    &:focus:before,
+    &--active:before {
+      position: absolute;
+      content: '';
+      border-bottom: 1px solid $white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &:hover{
+      color: $primary;
+      border-top: 2px solid $primary;
+      border-left: 1px solid #c9c9c9;
+      border-right: 1px solid #c9c9c9;
+      outline: none;
+    }
+
+    &:focus,
+    &--active{
+      color: $secondary;
+      border-top: 2px solid $secondary;
+      border-left: 1px solid #c9c9c9;
+      border-right: 1px solid #c9c9c9;
+      outline: none;
+    }
+  }
+
+  //Content
+  &__cnt{
+    padding: 20px 10px;
+    display: none;
+    &--active{
+      display: block;
+    }
+  }
+}
+
+
+.tabs{
+  &--nonflex{
+    .tabs__nav-link{
+      flex: 0;
+    }
+  }
+}

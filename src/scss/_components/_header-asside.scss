@@ -1,0 +1,16 @@
+/*
+* @section      Components
+* @Components	Header Asside
+*/
+
+.header-asside{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-asside{
+  * + *{
+    margin-left: 43px;
+  }
+}
